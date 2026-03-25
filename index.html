@@ -19,6 +19,91 @@
             padding: 20px;
         }
 
+        /* Password Protection Overlay */
+        #passwordOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        #passwordOverlay.hidden {
+            display: none;
+        }
+
+        .password-box {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+        }
+
+        .password-box h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .password-box p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .password-box input {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .password-box input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .password-box button {
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .password-box button:hover {
+            transform: translateY(-2px);
+        }
+
+        .password-box .error {
+            color: #dc3545;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        #mainContent {
+            display: none;
+        }
+
+        #mainContent.unlocked {
+            display: block;
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -539,6 +624,19 @@
     </style>
 </head>
 <body>
+    <!-- Password Protection Overlay -->
+    <div id="passwordOverlay">
+        <div class="password-box">
+            <h2>🔒 Protected Page</h2>
+            <p>Enter password to view EDF materials list</p>
+            <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
+            <button onclick="checkPassword()">Unlock</button>
+            <div class="error" id="errorMsg"></div>
+        </div>
+    </div>
+
+    <!-- Main Content (Hidden Until Password Correct) -->
+    <div id="mainContent">
     <div class="container">
         <header>
             <h1>🚗 EDF-Assisted Vehicle Project</h1>
@@ -1817,6 +1915,47 @@
             );
             window.location.href = `mailto:?subject=${subject}&body=${body}`;
         }
+
+        // Password Protection
+        const correctPassword = "edf2026";  // Change this to your desired password
+
+        function checkPassword() {
+            const input = document.getElementById('passwordInput');
+            const errorMsg = document.getElementById('errorMsg');
+            const overlay = document.getElementById('passwordOverlay');
+            const mainContent = document.getElementById('mainContent');
+
+            if (input.value === correctPassword) {
+                sessionStorage.setItem('edfUnlocked', 'true');
+                overlay.classList.add('hidden');
+                mainContent.classList.add('unlocked');
+                errorMsg.textContent = '';
+            } else {
+                errorMsg.textContent = '❌ Incorrect password. Please try again.';
+                input.value = '';
+                input.focus();
+            }
+        }
+
+        // Check if already unlocked in this session
+        window.addEventListener('DOMContentLoaded', function() {
+            const input = document.getElementById('passwordInput');
+
+            if (sessionStorage.getItem('edfUnlocked') === 'true') {
+                document.getElementById('passwordOverlay').classList.add('hidden');
+                document.getElementById('mainContent').classList.add('unlocked');
+            } else {
+                input.focus();
+            }
+
+            // Allow Enter key to submit password
+            input.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    checkPassword();
+                }
+            });
+        });
     </script>
+    </div> <!-- Close mainContent -->
 </body>
 </html>
