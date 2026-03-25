@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDF-Assisted Vehicle Project - Complete Materials List</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.95;
+        }
+
+        .vehicle-specs {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+        }
+
+        .vehicle-specs h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .spec-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .spec-label {
+            font-size: 0.85em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .spec-value {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+            margin-top: 5px;
+        }
+
+        .phase-selector {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .phase-btn {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            border: 3px solid #667eea;
+            background: white;
+            color: #667eea;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .phase-btn:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .phase-btn.active {
+            background: #667eea;
+            color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .content {
+            padding: 30px;
+        }
+
+        .category {
+            margin-bottom: 40px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .category:hover {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .category-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-header h2 {
+            font-size: 1.5em;
+        }
+
+        .category-total {
+            font-size: 1.3em;
+            font-weight: bold;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        .category-content {
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        .item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            display: grid;
+            grid-template-columns: 30px 1fr 120px 100px;
+            gap: 20px;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .item:hover {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .item-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .item-specs {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .item-link {
+            display: inline-block;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9em;
+            padding: 5px 12px;
+            border: 1px solid #667eea;
+            border-radius: 5px;
+            transition: all 0.2s ease;
+        }
+
+        .item-link:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        .item-quantity {
+            text-align: center;
+            font-size: 1.1em;
+            color: #666;
+        }
+
+        .item-price {
+            text-align: right;
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .cost-summary {
+            position: sticky;
+            bottom: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+        }
+
+        .cost-summary h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .cost-breakdown {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cost-item {
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 8px;
+        }
+
+        .cost-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+            margin-bottom: 5px;
+        }
+
+        .cost-value {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #fff3cd;
+            border-left: 5px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-title {
+            font-weight: bold;
+            color: #856404;
+            margin-bottom: 8px;
+        }
+
+        .supplier-section {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .supplier-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .supplier-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .supplier-card {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .supplier-name {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .supplier-desc {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .phase-content {
+            display: none;
+        }
+
+        .phase-content.active {
+            display: block;
+        }
+
+        .notes {
+            background: #e3f2fd;
+            border-left: 5px solid #2196f3;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .notes-title {
+            font-weight: bold;
+            color: #1565c0;
+            margin-bottom: 8px;
+        }
+
+        .add-item-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.2s ease;
+        }
+
+        .add-item-btn:hover {
+            background: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(40, 167, 69, 0.3);
+        }
+
+        .custom-item {
+            border-left-color: #28a745;
+            background: #f8fff9;
+        }
+
+        .delete-item-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: all 0.2s ease;
+        }
+
+        .delete-item-btn:hover {
+            background: #c82333;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .modal-header h3 {
+            color: #667eea;
+            margin: 0;
+        }
+
+        .close-btn {
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+            border: none;
+            background: none;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1em;
+            font-family: inherit;
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 60px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .phase-selector, .item-checkbox, .item-link {
+                display: none;
+            }
+
+            .container {
+                box-shadow: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .item {
+                grid-template-columns: 30px 1fr;
+                gap: 10px;
+            }
+
+            .item-quantity, .item-price {
+                grid-column: 2;
+                text-align: left;
+            }
+
+            header h1 {
+                font-size: 1.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 EDF-Assisted Vehicle Project</h1>
+            <p>Complete Materials & Shopping List</p>
+            <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.8;">2010 Toyota RAV4 Electric Thrust System</p>
+
+            <!-- EDF Images -->
+            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px; flex-wrap: wrap;">
+                <img src="data:image/jpeg;base64,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"
+                     style="max-width: 200px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);"
+                     alt="EDF Unit 1">
+                <img src="data:image/jpeg;base64,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"
+                     style="max-width: 200px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.2);"
+                     alt="EDF Unit 2">
+            </div>
+
+            <!-- Sharing Buttons -->
+            <div style="margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <button onclick="printToPDF()" style="background: white; color: #667eea; border: 2px solid white; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.2s;">
+                    📄 Save as PDF
+                </button>
+                <button onclick="copyLink()" style="background: white; color: #667eea; border: 2px solid white; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.2s;">
+                    🔗 Copy Link
+                </button>
+                <button onclick="shareViaEmail()" style="background: white; color: #667eea; border: 2px solid white; padding: 8px 16px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.2s;">
+                    ✉️ Email List
+                </button>
+            </div>
+        </header>
+
+        <!-- Market Analysis -->
+        <div class="vehicle-specs" style="background: #fff8e1; border-left-color: #ffc107;">
+            <h3 style="color: #ffc107;">💼 Market Opportunity (20% Markup)</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Retail Price (DIY Cost + 20%)</div>
+                    <div class="spec-value">$14,120</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Target Market Size (US)</div>
+                    <div class="spec-value">~50M Vehicles</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Early Adopter Market (1%)</div>
+                    <div class="spec-value">500,000 Units</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Revenue Potential @ 1%</div>
+                    <div class="spec-value">$7.06 Billion</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Profit Per Unit (20%)</div>
+                    <div class="spec-value">$2,353</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Target Customers</div>
+                    <div class="spec-value">SUV, Gas, Hybrid</div>
+                </div>
+            </div>
+            <p style="margin-top: 15px; font-size: 0.9em; opacity: 0.9;">
+                <strong>Target Market:</strong> SUVs, Compact SUVs, Crossovers (Highlander, Pilot, Explorer, Escape, CR-V, CX-5, etc.)<br>
+                <strong>Ideal Customer:</strong> High-mileage commuters (15k+ miles/year), gas & hybrid owners seeking better MPG
+            </p>
+        </div>
+
+        <div class="vehicle-specs">
+            <h3>Project Goals</h3>
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-label">Current MPG</div>
+                    <div class="spec-value">26 MPG</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Target MPG</div>
+                    <div class="spec-value">41-43 MPG</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Drag Reduction</div>
+                    <div class="spec-value">58-66%</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Net Thrust</div>
+                    <div class="spec-value">22-25 lbs</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Runtime</div>
+                    <div class="spec-value">2.1 hours</div>
+                </div>
+                <div class="spec-item">
+                    <div class="spec-label">Range</div>
+                    <div class="spec-value">138 miles</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="phase-selector">
+            <button class="phase-btn active" onclick="showPhase('phase1')">Phase 1: Testing ($1,899)</button>
+            <button class="phase-btn" onclick="showPhase('phase2upgrade')">Phase 2: Upgrade ($9,867)</button>
+            <button class="phase-btn" onclick="showPhase('phase2')">Phase 2: From Scratch ($11,766)</button>
+        </div>
+
+        <div class="content">
+            <!-- PHASE 1: TESTING -->
+            <div id="phase1" class="phase-content active">
+                <div class="warning">
+                    <div class="warning-title">⚡ Phase 1: Proof of Concept Testing</div>
+                    Single EDF setup using your existing Jackery 1000 v2. Validates mechanical, electrical, and safety systems before full investment. Expected performance: 8 lbs thrust, 21% drag reduction, 43 minute runtime.
+                </div>
+
+                <!-- Propulsion -->
+                <div class="category" id="phase1-propulsion">
+                    <div class="category-header">
+                        <h2>🚀 Propulsion System</h2>
+                        <span class="category-total">$669</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">JP Hobby 120mm EDF with Motor</div>
+                                <div class="item-specs">12-blade metal impeller, 760KV motor, 16.5 lbs max thrust @ 4,500W</div>
+                                <a href="https://www.rc-castle.com/index.php?route=product/product&product_id=8218" target="_blank" class="item-link">Buy at RC Castle</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$469</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">HobbyWing Platinum PRO V4 200A ESC</div>
+                                <div class="item-specs">12S capable, 5V/6A BEC, programmable, telemetry support</div>
+                                <a href="https://www.amazon.com/s?k=hobbywing+platinum+200a" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power System -->
+                <div class="category" id="phase1-power">
+                    <div class="category-header">
+                        <h2>🔋 Power System</h2>
+                        <span class="category-total">$0</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="notes">
+                            <div class="notes-title">✓ Using Existing Equipment</div>
+                            You already own: Jackery Explorer 1000 v2 (1,070Wh, 1,500W continuous output)<br>
+                            This is sufficient for Phase 1 testing at 33% throttle.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nacelle -->
+                <div class="category" id="phase1-nacelle">
+                    <div class="category-header">
+                        <h2>🏗️ Nacelle Housing</h2>
+                        <span class="category-total">$200</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="warning">
+                            <div class="warning-title">💡 Thule Force 3 XL Option</div>
+                            You could top-mount the EDF on your existing Thule box (reversible, no cutting). However, a simple DIY nacelle is recommended for Phase 1 testing.
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">DIY Test Nacelle Materials</div>
+                                <div class="item-specs">Blue foam (2" thick), fiberglass cloth (5 yards), epoxy resin (1 gallon), PVC pipe, sandpaper</div>
+                                <a href="https://www.uscomposites.com" target="_blank" class="item-link">US Composites</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mounting Hardware -->
+                <div class="category" id="phase1-mounting">
+                    <div class="category-header">
+                        <h2>🔩 Mounting Hardware</h2>
+                        <span class="category-total">$500</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Thule WingBar Evo Roof Rack</div>
+                                <div class="item-specs">For 2010 RAV4, 165 lb capacity, 50" bars (model 127)</div>
+                                <a href="https://www.rei.com/c/roof-racks" target="_blank" class="item-link">Buy at REI</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$400</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Aluminum Mounting Plate & Hardware</div>
+                                <div class="item-specs">1/4" aluminum plate (12"×12"), stainless bolts M6, rubber vibration mounts</div>
+                                <a href="https://sendcutsend.com" target="_blank" class="item-link">SendCutSend</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$100</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrical & Control -->
+                <div class="category" id="phase1-electrical">
+                    <div class="category-header">
+                        <h2>⚡ Electrical & Control System</h2>
+                        <span class="category-total">$130</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">FlySky FS-i6X RC Transmitter & Receiver</div>
+                                <div class="item-specs">2.4GHz, 6 channel, throttle control for ESC</div>
+                                <a href="https://www.amazon.com/s?k=flysky+fs-i6x" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$55</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Wiring Kit</div>
+                                <div class="item-specs">10 AWG silicone wire (25 ft red/black), XT90 connectors, heat shrink, cable glands</div>
+                                <a href="https://www.amazon.com/s?k=10awg+silicone+wire" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$75</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety Equipment -->
+                <div class="category" id="phase1-safety">
+                    <div class="category-header">
+                        <h2>🛡️ Safety Equipment</h2>
+                        <span class="category-total">$100</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">EDF Intake Grill (FOD Protection)</div>
+                                <div class="item-specs">1/4" wire mesh, prevents bird strikes and debris</div>
+                                <a href="https://www.mcmaster.com" target="_blank" class="item-link">McMaster-Carr</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$30</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Fire Extinguisher (ABC 5 lb)</div>
+                                <div class="item-specs">Mount in cargo area near battery</div>
+                                <a href="https://www.amazon.com/s?k=5lb+fire+extinguisher" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$50</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Emergency Kill Switch</div>
+                                <div class="item-specs">Handlebar-style safety cutoff, mount within driver reach</div>
+                                <a href="https://www.amazon.com/s?k=emergency+kill+switch" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$20</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools (Optional) -->
+                <div class="category" id="phase1-tools">
+                    <div class="category-header">
+                        <h2>🔧 Tools (If Needed)</h2>
+                        <span class="category-total">$200</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="notes">
+                            <div class="notes-title">📝 Optional</div>
+                            Only purchase if you don't already own these tools.
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Basic Tool Kit</div>
+                                <div class="item-specs">Soldering iron (60W), wire stripper, crimping tool, multimeter, heat gun</div>
+                                <a href="https://www.amazon.com" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$200</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHASE 2: FULL SYSTEM -->
+            <div id="phase2" class="phase-content">
+                <div class="warning">
+                    <div class="warning-title">🚀 Phase 2: Full Production System</div>
+                    Dual EDF configuration with 2× Jackery 5000 Plus batteries. Complete highway-capable system with 22 lbs net thrust, 58% drag reduction, 2.1 hour runtime, 138 mile range, 41 MPG performance.
+                </div>
+
+                <!-- Propulsion -->
+                <div class="category" id="phase2-propulsion">
+                    <div class="category-header">
+                        <h2>🚀 Propulsion System</h2>
+                        <span class="category-total">$1,638</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">JP Hobby 120mm EDF with Motor</div>
+                                <div class="item-specs">12-blade metal impeller, 760KV motor, 16.5 lbs max thrust @ 4,500W</div>
+                                <a href="https://www.rc-castle.com/index.php?route=product/product&product_id=8218" target="_blank" class="item-link">Buy at RC Castle</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$938</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">HobbyWing Platinum PRO V4 200A ESC</div>
+                                <div class="item-specs">12S capable, 5V/6A BEC, programmable, telemetry support</div>
+                                <a href="https://www.amazon.com/s?k=hobbywing+platinum+200a" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$400</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Victron Orion DC-DC Converter (48V to 50.4V)</div>
+                                <div class="item-specs">280W, for Jackery to ESC voltage compatibility</div>
+                                <a href="https://www.amazon.com/s?k=victron+orion+48v" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$300</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power System -->
+                <div class="category" id="phase2-power">
+                    <div class="category-header">
+                        <h2>🔋 Power System</h2>
+                        <span class="category-total">$7,998</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Jackery Explorer 5000 Plus</div>
+                                <div class="item-specs">5,120Wh capacity, 3,000W continuous output, solar compatible, LiFePO4 battery</div>
+                                <a href="https://www.jackery.com/products/explorer-5000-plus-portable-power-station" target="_blank" class="item-link">Buy at Jackery</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$7,998</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Heavy-Duty AC Extension Cords</div>
+                                <div class="item-specs">12 AWG, 15 ft, for Jackery to roof connections</div>
+                                <a href="https://www.amazon.com/s?k=12awg+extension+cord" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$50</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nacelle -->
+                <div class="category" id="phase2-nacelle">
+                    <div class="category-header">
+                        <h2>🏗️ Nacelle Housings</h2>
+                        <span class="category-total">$600</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="notes">
+                            <div class="notes-title">🎨 Recommended: Custom Fabrication</div>
+                            Elliptical nacelles (22" W × 10" H × 24" L) provide optimal aerodynamics. Can be DIY fiberglass ($390) or commissioned from composite shop ($600-1,000).
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Custom Fiberglass Nacelles (Professional)</div>
+                                <div class="item-specs">Elliptical 22"W × 10"H × 24"L, fiberglass construction, painted, ready to mount</div>
+                                <a href="#" class="item-link">Local Composite Shop</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$600</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mounting Hardware -->
+                <div class="category" id="phase2-mounting">
+                    <div class="category-header">
+                        <h2>🔩 Mounting Hardware</h2>
+                        <span class="category-total">$635</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Thule WingBar Evo Roof Rack</div>
+                                <div class="item-specs">For 2010 RAV4, 165 lb capacity, 50" bars</div>
+                                <a href="https://www.rei.com/c/roof-racks" target="_blank" class="item-link">Buy at REI</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$400</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Aluminum Mounting Plates & Hardware</div>
+                                <div class="item-specs">1/4" aluminum (12"×12" × 2), stainless M6 hardware, vibration isolators</div>
+                                <a href="https://sendcutsend.com" target="_blank" class="item-link">SendCutSend</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$170</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Battery Cargo Mounting Kit</div>
+                                <div class="item-specs">2× heavy-duty ratchet straps (2,000 lb), anti-slip mat (2'×4')</div>
+                                <a href="https://www.amazon.com/s?k=ratchet+straps" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$65</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Electrical & Control -->
+                <div class="category" id="phase2-electrical">
+                    <div class="category-header">
+                        <h2>⚡ Electrical & Control System</h2>
+                        <span class="category-total">$260</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">FlySky FS-i6X RC Transmitter & Receiver</div>
+                                <div class="item-specs">2.4GHz, 6 channel, dual ESC control with Y-harness</div>
+                                <a href="https://www.amazon.com/s?k=flysky+fs-i6x" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$55</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Dual Throttle Y-Harness Cable</div>
+                                <div class="item-specs">For synchronized ESC control</div>
+                                <a href="https://www.amazon.com/s?k=servo+y+cable" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$10</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Emergency Kill Switch</div>
+                                <div class="item-specs">Handlebar-style safety cutoff</div>
+                                <a href="https://www.amazon.com/s?k=emergency+kill+switch" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$20</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Complete Wiring Kit</div>
+                                <div class="item-specs">10 AWG wire (50 ft), XT90 connectors, heat shrink, cable glands, junction boxes (IP67)</div>
+                                <a href="https://www.amazon.com" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$175</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Safety Equipment -->
+                <div class="category" id="phase2-safety">
+                    <div class="category-header">
+                        <h2>🛡️ Safety Equipment</h2>
+                        <span class="category-total">$195</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">EDF Intake Grills (FOD Protection)</div>
+                                <div class="item-specs">1/4" wire mesh, prevents debris ingestion</div>
+                                <a href="https://www.mcmaster.com" target="_blank" class="item-link">McMaster-Carr</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$60</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Fire Extinguisher (ABC 5 lb)</div>
+                                <div class="item-specs">Mount in cargo area</div>
+                                <a href="https://www.amazon.com/s?k=5lb+fire+extinguisher" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$50</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Temperature Alarms</div>
+                                <div class="item-specs">Battery overheat monitoring</div>
+                                <a href="https://www.amazon.com/s?k=temperature+alarm" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$40</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Weatherproof Sealant & First Aid</div>
+                                <div class="item-specs">Silicone RTV, warning labels, first aid kit</div>
+                                <a href="https://www.amazon.com" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$45</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation & Legal -->
+                <div class="category" id="phase2-documentation">
+                    <div class="category-header">
+                        <h2>📋 Documentation & Legal</h2>
+                        <span class="category-total">$345</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Engineering Inspection (Optional but Recommended)</div>
+                                <div class="item-specs">Independent engineer sign-off for CHP compliance</div>
+                                <a href="#" class="item-link">Local PE Firm</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$300</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Custom Warning Labels & Documentation</div>
+                                <div class="item-specs">Printed signage, laminated safety manual for glove box</div>
+                                <a href="https://www.vistaprint.com" target="_blank" class="item-link">Vista Print</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$45</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional: Solar Expansion -->
+                <div class="category" id="phase2-solar">
+                    <div class="category-header">
+                        <h2>☀️ Solar Expansion (Optional)</h2>
+                        <span class="category-total">$2,700</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="notes">
+                            <div class="notes-title">🌞 Plug-and-Play Solar</div>
+                            Add Jackery SolarSaga panels for free charging while parked. Extends effective range and reduces electricity costs to zero.
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Jackery SolarSaga 200W Solar Panels</div>
+                                <div class="item-specs">Foldable, weather-resistant, 200W output each, direct compatibility with Jackery 5000</div>
+                                <a href="https://www.jackery.com/products/solarsaga-200w-solar-panel" target="_blank" class="item-link">Buy at Jackery</a>
+                            </div>
+                            <div class="item-quantity">Qty: 8</div>
+                            <div class="item-price">$2,400</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Extended Roof Rack for Solar Panels</div>
+                                <div class="item-specs">Platform for mounting 4× panels per side</div>
+                                <a href="https://www.rei.com" target="_blank" class="item-link">Buy at REI</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$300</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PHASE 2 UPGRADE: From Phase 1 -->
+            <div id="phase2upgrade" class="phase-content">
+                <div class="warning">
+                    <div class="warning-title">🔄 Phase 2: Upgrade Path (Already Built Phase 1)</div>
+                    This list shows ONLY the additional parts needed if you already completed Phase 1 testing. Reuses: 1× EDF, 1× ESC, roof rack, control system, basic wiring, and safety equipment.
+                </div>
+
+                <div class="notes">
+                    <div class="notes-title">✓ Already Owned from Phase 1 ($1,899)</div>
+                    You already have: 1× JP Hobby 120mm EDF, 1× ESC, Thule roof rack, RC transmitter/receiver, basic wiring kit, fire extinguisher, kill switch, intake grill, mounting hardware, 1× nacelle
+                </div>
+
+                <!-- Additional Propulsion -->
+                <div class="category" id="phase2upgrade-propulsion">
+                    <div class="category-header">
+                        <h2>🚀 Additional Propulsion Components</h2>
+                        <span class="category-total">$669</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">1× Additional JP Hobby 120mm EDF with Motor</div>
+                                <div class="item-specs">Second unit for dual-EDF configuration</div>
+                                <a href="https://www.rc-castle.com/index.php?route=product/product&product_id=8218" target="_blank" class="item-link">Buy at RC Castle</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$469</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">1× Additional HobbyWing ESC</div>
+                                <div class="item-specs">For second EDF</div>
+                                <a href="https://www.amazon.com/s?k=hobbywing+platinum+200a" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$200</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Power System Upgrade -->
+                <div class="category" id="phase2upgrade-power">
+                    <div class="category-header">
+                        <h2>🔋 Power System Upgrade</h2>
+                        <span class="category-total">$7,998</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="notes">
+                            <div class="notes-title">📝 Replacing Jackery 1000 v2</div>
+                            The Jackery 1000 v2 used in Phase 1 doesn't have enough capacity/output for Phase 2. You'll need 2× Jackery 5000 Plus. Consider selling the 1000 v2 (~$600 resale value) to offset cost.
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Jackery Explorer 5000 Plus</div>
+                                <div class="item-specs">5,120Wh capacity, 3,000W continuous output, solar compatible</div>
+                                <a href="https://www.jackery.com/products/explorer-5000-plus-portable-power-station" target="_blank" class="item-link">Buy at Jackery</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$7,998</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Heavy-Duty AC Extension Cords</div>
+                                <div class="item-specs">12 AWG, 15 ft</div>
+                                <a href="https://www.amazon.com/s?k=12awg+extension+cord" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$50</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Second Nacelle -->
+                <div class="category" id="phase2upgrade-nacelle">
+                    <div class="category-header">
+                        <h2>🏗️ Second Nacelle Housing</h2>
+                        <span class="category-total">$300</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Second Custom Nacelle</div>
+                                <div class="item-specs">Match your Phase 1 design, elliptical 22"W × 10"H × 24"L</div>
+                                <a href="#" class="item-link">Same Source as First</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$300</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Mounting Hardware -->
+                <div class="category" id="phase2upgrade-mounting">
+                    <div class="category-header">
+                        <h2>🔩 Additional Mounting Hardware</h2>
+                        <span class="category-total">$135</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Second Aluminum Mounting Plate</div>
+                                <div class="item-specs">1/4" aluminum (12"×12"), stainless hardware, vibration mounts</div>
+                                <a href="https://sendcutsend.com" target="_blank" class="item-link">SendCutSend</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$100</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Additional Cargo Mounting (for 2× Jackery)</div>
+                                <div class="item-specs">Extra ratchet strap, anti-slip mat extension</div>
+                                <a href="https://www.amazon.com" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$35</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Electrical -->
+                <div class="category" id="phase2upgrade-electrical">
+                    <div class="category-header">
+                        <h2>⚡ Additional Electrical Components</h2>
+                        <span class="category-total">$120</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Dual Throttle Y-Harness Cable</div>
+                                <div class="item-specs">Synchronize both ESCs from one transmitter</div>
+                                <a href="https://www.amazon.com/s?k=servo+y+cable" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$10</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Additional Wiring & Connectors</div>
+                                <div class="item-specs">10 AWG wire (25 ft), XT90 connectors, junction box, cable glands</div>
+                                <a href="https://www.amazon.com" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$110</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Safety -->
+                <div class="category" id="phase2upgrade-safety">
+                    <div class="category-header">
+                        <h2>🛡️ Additional Safety Equipment</h2>
+                        <span class="category-total">$45</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Second EDF Intake Grill</div>
+                                <div class="item-specs">FOD protection for second EDF</div>
+                                <a href="https://www.mcmaster.com" target="_blank" class="item-link">McMaster-Carr</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$30</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Temperature Alarms</div>
+                                <div class="item-specs">Monitor both Jackery units</div>
+                                <a href="https://www.amazon.com/s?k=temperature+alarm" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Qty: 2</div>
+                            <div class="item-price">$40</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Additional Sealant & Labels</div>
+                                <div class="item-specs">Weatherproofing, updated warning labels</div>
+                                <a href="https://www.amazon.com" target="_blank" class="item-link">Buy on Amazon</a>
+                            </div>
+                            <div class="item-quantity">Kit</div>
+                            <div class="item-price">$25</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Documentation Update -->
+                <div class="category" id="phase2upgrade-documentation">
+                    <div class="category-header">
+                        <h2>📋 Documentation Update</h2>
+                        <span class="category-total">$300</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Engineering Re-Inspection (Recommended)</div>
+                                <div class="item-specs">Update certification for dual-EDF configuration</div>
+                                <a href="#" class="item-link">Local PE Firm</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$300</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optional: Solar Expansion -->
+                <div class="category" id="phase2upgrade-solar">
+                    <div class="category-header">
+                        <h2>☀️ Solar Expansion (Optional)</h2>
+                        <span class="category-total">$2,700</span>
+                    </div>
+                    <div class="category-content">
+                        <div class="notes">
+                            <div class="notes-title">🌞 Plug-and-Play Solar</div>
+                            Add Jackery SolarSaga panels for free charging. Same as Phase 2 from scratch.
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Jackery SolarSaga 200W Solar Panels</div>
+                                <div class="item-specs">8× panels for optimal charging rate</div>
+                                <a href="https://www.jackery.com/products/solarsaga-200w-solar-panel" target="_blank" class="item-link">Buy at Jackery</a>
+                            </div>
+                            <div class="item-quantity">Qty: 8</div>
+                            <div class="item-price">$2,400</div>
+                        </div>
+
+                        <div class="item">
+                            <input type="checkbox" class="item-checkbox">
+                            <div class="item-details">
+                                <div class="item-name">Extended Roof Rack for Solar Panels</div>
+                                <div class="item-specs">Platform for mounting panels</div>
+                                <a href="https://www.rei.com" target="_blank" class="item-link">Buy at REI</a>
+                            </div>
+                            <div class="item-quantity">Qty: 1</div>
+                            <div class="item-price">$300</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Supplier Section -->
+            <div class="supplier-section">
+                <h3>🏪 Recommended Suppliers</h3>
+                <div class="supplier-grid">
+                    <div class="supplier-card">
+                        <div class="supplier-name">RC Castle</div>
+                        <div class="supplier-desc">EDFs, ESCs, RC equipment</div>
+                        <a href="https://www.rc-castle.com" target="_blank">Visit Store →</a>
+                    </div>
+
+                    <div class="supplier-card">
+                        <div class="supplier-name">Jackery</div>
+                        <div class="supplier-desc">Portable power stations, solar panels</div>
+                        <a href="https://www.jackery.com" target="_blank">Visit Store →</a>
+                    </div>
+
+                    <div class="supplier-card">
+                        <div class="supplier-name">US Composites</div>
+                        <div class="supplier-desc">Fiberglass materials, epoxy resin</div>
+                        <a href="https://www.uscomposites.com" target="_blank">Visit Store →</a>
+                    </div>
+
+                    <div class="supplier-card">
+                        <div class="supplier-name">SendCutSend</div>
+                        <div class="supplier-desc">Custom metal cutting, laser/waterjet</div>
+                        <a href="https://sendcutsend.com" target="_blank">Visit Store →</a>
+                    </div>
+
+                    <div class="supplier-card">
+                        <div class="supplier-name">McMaster-Carr</div>
+                        <div class="supplier-desc">Hardware, fasteners, industrial supplies</div>
+                        <a href="https://www.mcmaster.com" target="_blank">Visit Store →</a>
+                    </div>
+
+                    <div class="supplier-card">
+                        <div class="supplier-name">Amazon</div>
+                        <div class="supplier-desc">Electronics, tools, misc parts</div>
+                        <a href="https://www.amazon.com" target="_blank">Visit Store →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cost-summary">
+            <h2 id="total-cost">Total: $1,899</h2>
+            <div class="cost-breakdown">
+                <div class="cost-item">
+                    <div class="cost-label">DIY Cost</div>
+                    <div class="cost-value" id="diy-cost">$1,899</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-label">Retail (+ 20%)</div>
+                    <div class="cost-value" id="retail-cost">$2,279</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-label">Profit Margin</div>
+                    <div class="cost-value" id="profit-margin">$380</div>
+                </div>
+                <div class="cost-item">
+                    <div class="cost-label">Break-Even (15k mi/yr)</div>
+                    <div class="cost-value">4.8 years</div>
+                </div>
+            </div>
+            <p style="margin-top: 20px; font-size: 0.9em; opacity: 0.9;">
+                💡 Recommended: Phase 1 ($1,899) → Phase 2 Upgrade ($9,867) = $11,766 DIY / $14,120 Retail<br>
+                Same final cost but validates concept before full investment!
+            </p>
+        </div>
+    </div>
+
+    <!-- Add Item Modal -->
+    <div id="addItemModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Add Custom Item</h3>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="addItemForm">
+                <input type="hidden" id="categoryId" name="categoryId">
+                <input type="hidden" id="phaseId" name="phaseId">
+
+                <div class="form-group">
+                    <label for="itemName">Item Name *</label>
+                    <input type="text" id="itemName" name="itemName" required placeholder="e.g., Custom Mounting Bracket">
+                </div>
+
+                <div class="form-group">
+                    <label for="itemSpecs">Specifications / Description</label>
+                    <textarea id="itemSpecs" name="itemSpecs" placeholder="e.g., 1/4&quot; steel plate, powder coated, custom dimensions"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="itemLink">Purchase Link (optional)</label>
+                    <input type="url" id="itemLink" name="itemLink" placeholder="https://...">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="itemQuantity">Quantity *</label>
+                        <input type="text" id="itemQuantity" name="itemQuantity" required placeholder="e.g., 2 or Kit" value="1">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemPrice">Price (USD) *</label>
+                        <input type="number" id="itemPrice" name="itemPrice" step="0.01" required placeholder="0.00">
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Add Item</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Local storage key
+        const STORAGE_KEY = 'edf-custom-items';
+
+        // Load custom items from localStorage
+        function loadCustomItems() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            return stored ? JSON.parse(stored) : [];
+        }
+
+        // Save custom items to localStorage
+        function saveCustomItems(items) {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+        }
+
+        // Add "Add Item" buttons to all categories
+        function addItemButtons() {
+            document.querySelectorAll('.category-content').forEach(content => {
+                const category = content.closest('.category');
+                const categoryId = category.id || `category-${Math.random().toString(36).substr(2, 9)}`;
+                category.id = categoryId;
+
+                const phaseId = content.closest('.phase-content').id;
+
+                const addBtn = document.createElement('button');
+                addBtn.className = 'add-item-btn';
+                addBtn.textContent = '+ Add Custom Item';
+                addBtn.onclick = () => openModal(categoryId, phaseId);
+
+                content.appendChild(addBtn);
+            });
+        }
+
+        // Open modal
+        function openModal(categoryId, phaseId) {
+            document.getElementById('addItemModal').style.display = 'block';
+            document.getElementById('categoryId').value = categoryId;
+            document.getElementById('phaseId').value = phaseId;
+            document.getElementById('addItemForm').reset();
+            document.getElementById('categoryId').value = categoryId;
+            document.getElementById('phaseId').value = phaseId;
+        }
+
+        // Close modal
+        function closeModal() {
+            document.getElementById('addItemModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('addItemModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('addItemForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(e.target);
+            const item = {
+                id: Date.now().toString(),
+                categoryId: formData.get('categoryId'),
+                phaseId: formData.get('phaseId'),
+                name: formData.get('itemName'),
+                specs: formData.get('itemSpecs'),
+                link: formData.get('itemLink'),
+                quantity: formData.get('itemQuantity'),
+                price: parseFloat(formData.get('itemPrice'))
+            };
+
+            // Save to localStorage
+            const customItems = loadCustomItems();
+            customItems.push(item);
+            saveCustomItems(customItems);
+
+            // Add to DOM
+            addItemToDOM(item);
+
+            // Update category total
+            updateCategoryTotal(item.categoryId);
+
+            // Close modal
+            closeModal();
+        });
+
+        // Add item to DOM
+        function addItemToDOM(item) {
+            const category = document.getElementById(item.categoryId);
+            const categoryContent = category.querySelector('.category-content');
+            const addBtn = categoryContent.querySelector('.add-item-btn');
+
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'item custom-item';
+            itemDiv.dataset.itemId = item.id;
+
+            const linkHTML = item.link
+                ? `<a href="${item.link}" target="_blank" class="item-link">Buy Link</a>`
+                : '';
+
+            itemDiv.innerHTML = `
+                <input type="checkbox" class="item-checkbox">
+                <div class="item-details">
+                    <div class="item-name">${item.name} <span style="color: #28a745; font-size: 0.8em;">(Custom)</span></div>
+                    <div class="item-specs">${item.specs || ''}</div>
+                    ${linkHTML}
+                    <button class="delete-item-btn" onclick="deleteItem('${item.id}')">Delete</button>
+                </div>
+                <div class="item-quantity">${item.quantity}</div>
+                <div class="item-price">$${item.price.toFixed(2)}</div>
+            `;
+
+            categoryContent.insertBefore(itemDiv, addBtn);
+        }
+
+        // Delete item
+        function deleteItem(itemId) {
+            if (!confirm('Delete this custom item?')) return;
+
+            // Remove from localStorage
+            let customItems = loadCustomItems();
+            const item = customItems.find(i => i.id === itemId);
+            customItems = customItems.filter(i => i.id !== itemId);
+            saveCustomItems(customItems);
+
+            // Remove from DOM
+            const itemDiv = document.querySelector(`[data-item-id="${itemId}"]`);
+            if (itemDiv) {
+                const categoryId = itemDiv.closest('.category').id;
+                itemDiv.remove();
+                updateCategoryTotal(categoryId);
+            }
+        }
+
+        // Update category total
+        function updateCategoryTotal(categoryId) {
+            const category = document.getElementById(categoryId);
+            const items = category.querySelectorAll('.item');
+            let total = 0;
+
+            items.forEach(item => {
+                const priceText = item.querySelector('.item-price').textContent;
+                const price = parseFloat(priceText.replace('$', '').replace(',', ''));
+                if (!isNaN(price)) {
+                    total += price;
+                }
+            });
+
+            const totalSpan = category.querySelector('.category-total');
+            if (totalSpan) {
+                totalSpan.textContent = `$${total.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
+            }
+        }
+
+        // Load and display all custom items on page load
+        function loadAllCustomItems() {
+            const customItems = loadCustomItems();
+            customItems.forEach(item => {
+                // Check if phase and category exist
+                const phase = document.getElementById(item.phaseId);
+                const category = document.getElementById(item.categoryId);
+                if (phase && category) {
+                    addItemToDOM(item);
+                }
+            });
+
+            // Update all category totals
+            document.querySelectorAll('.category').forEach(category => {
+                if (category.id) {
+                    updateCategoryTotal(category.id);
+                }
+            });
+        }
+
+        function showPhase(phaseId) {
+            // Hide all phases
+            document.querySelectorAll('.phase-content').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // Remove active class from all buttons
+            document.querySelectorAll('.phase-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Show selected phase
+            document.getElementById(phaseId).classList.add('active');
+
+            // Update active button
+            event.target.classList.add('active');
+
+            // Update costs with markup
+            let diyCost = 1899;
+            if (phaseId === 'phase2') {
+                diyCost = 11766;
+            } else if (phaseId === 'phase2upgrade') {
+                diyCost = 9867;
+            }
+
+            const retailCost = Math.round(diyCost * 1.20);
+            const profit = retailCost - diyCost;
+
+            document.getElementById('total-cost').textContent = 'Total DIY: $' + diyCost.toLocaleString();
+            document.getElementById('diy-cost').textContent = '$' + diyCost.toLocaleString();
+            document.getElementById('retail-cost').textContent = '$' + retailCost.toLocaleString();
+            document.getElementById('profit-margin').textContent = '$' + profit.toLocaleString();
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add "Add Item" buttons to all categories
+            addItemButtons();
+
+            // Load custom items from localStorage
+            loadAllCustomItems();
+
+            // Add click handlers to category headers for collapsing (optional future feature)
+            document.querySelectorAll('.category-header').forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                        content.style.maxHeight = '0px';
+                        content.style.overflow = 'hidden';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        content.style.overflow = 'visible';
+                    }
+                });
+            });
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Sharing functions
+        function printToPDF() {
+            window.print();
+        }
+
+        function copyLink() {
+            const filePath = window.location.href;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(filePath).then(() => {
+                    alert('✓ File location copied to clipboard!\n\n' + filePath + '\n\nYou can send this file to anyone.');
+                });
+            } else {
+                // Fallback for older browsers
+                prompt('Copy this file path:', filePath);
+            }
+        }
+
+        function shareViaEmail() {
+            const subject = encodeURIComponent('EDF-Assisted Vehicle Project - Materials List');
+            const body = encodeURIComponent(
+                'Check out this complete materials list for the EDF-Assisted Vehicle Project!\n\n' +
+                '2010 Toyota RAV4 Electric Thrust System\n\n' +
+                'The file is attached/linked. Open it in any web browser to see:\n' +
+                '• Complete parts list with prices\n' +
+                '• Direct links to suppliers\n' +
+                '• Three build options (Testing, Full System, Upgrade)\n' +
+                '• Interactive checkboxes to track purchases\n\n' +
+                'Total costs:\n' +
+                '• Phase 1: $1,899 (testing)\n' +
+                '• Phase 2: $11,766 (full system)\n' +
+                '• Solar option: +$2,700\n\n' +
+                'This system can improve MPG from 26 to 43!'
+            );
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+        }
+    </script>
+</body>
+</html>
