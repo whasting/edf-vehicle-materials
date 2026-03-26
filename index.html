@@ -201,8 +201,9 @@
                 <h2>Complete Materials & Shopping List</h2>
 
                 <div class="phase-selection">
-                    <button class="phase-btn active" onclick="selectPhase('testing')">Phase 1: Testing ($1,899)</button>
-                    <button class="phase-btn" onclick="selectPhase('upgrade')">Phase 2: Upgrade ($9,867)</button>
+                    <button class="phase-btn active" onclick="selectPhase('testing')">Single EDF Test ($1,899)</button>
+                    <button class="phase-btn" onclick="selectPhase('dual-test')">Dual EDF Test ($2,368)</button>
+                    <button class="phase-btn" onclick="selectPhase('upgrade')">Full Upgrade ($9,867)</button>
                     <button class="phase-btn" onclick="selectPhase('scratch')">From Scratch ($11,766)</button>
                 </div>
 
@@ -306,6 +307,30 @@
                     { name: "Roof rack reinforcement", link: "https://www.homedepot.com/b/Tools-Hardware-Hardware-Brackets-Braces/N-5yc1vZc2gr", price: 200 },
                     { name: "Mounting hardware", link: "https://www.homedepot.com/b/Hardware-Fasteners/N-5yc1vZc27g", price: 95 },
                     { name: "Tools & supplies", link: "https://www.homedepot.com/b/Tools/N-5yc1vZc1xy", price: 150 }
+                ]}
+            ],
+            'dual-test': [
+                { section: "Electric Ducted Fans", items: [
+                    { name: "2× JP Hobby 120mm EDF", link: "", price: 937.96 }
+                ]},
+                { section: "Power System", items: [
+                    { name: "Jackery 1000 Plus (existing)", link: "", price: 0 },
+                    { name: "Note: ~16 min runtime @ full thrust", link: "", price: 0 }
+                ]},
+                { section: "Electronics", items: [
+                    { name: "2× 120A ESC", link: "", price: 179.98 },
+                    { name: "RC Transmitter/Receiver", link: "", price: 120 },
+                    { name: "Wiring & Connectors", link: "", price: 125 }
+                ]},
+                { section: "Test Nacelles & Install", items: [
+                    { name: "2× Test nacelles (temp mounting)", link: "", price: 300 },
+                    { name: "Roof rack reinforcement", link: "", price: 200 },
+                    { name: "Mounting hardware", link: "", price: 95 },
+                    { name: "Tools & supplies", link: "", price: 150 }
+                ]},
+                { section: "Note", items: [
+                    { name: "Perfect for testing dual-EDF concept", link: "", price: 0 },
+                    { name: "Upgrade to Jackery 5000 Plus later for 1hr runtime", link: "", price: 0 }
                 ]}
             ],
             upgrade: [
