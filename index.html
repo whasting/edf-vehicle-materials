@@ -163,9 +163,105 @@
         .market-card h4 { color: #667eea; margin-bottom: 15px; }
         .market-card .big-number { font-size: 2.5em; font-weight: bold; color: #28a745; margin: 10px 0; }
 
+        /* Shopping Table */
+        .shopping-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .shopping-table thead {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .shopping-table th {
+            padding: 15px;
+            text-align: left;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        .shopping-table tbody tr {
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+        }
+
+        .shopping-table tbody tr:hover {
+            background: #f8f9fa;
+        }
+
+        .shopping-table td {
+            padding: 15px;
+            vertical-align: top;
+        }
+
+        .shopping-table td:first-child {
+            font-weight: bold;
+            color: #667eea;
+            text-align: center;
+            font-size: 1.1em;
+        }
+
+        .shopping-table td:nth-child(4) {
+            font-weight: bold;
+            color: #28a745;
+            white-space: nowrap;
+        }
+
+        .shopping-table tfoot {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+
+        .shopping-table tfoot td {
+            padding: 20px 15px;
+            font-size: 1.1em;
+        }
+
+        .shopping-table tfoot td:nth-child(2) {
+            color: #667eea;
+            font-size: 1.2em;
+        }
+
+        .shop-link {
+            display: inline-block;
+            padding: 8px 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .shop-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
         @media (max-width: 768px) {
             .tabs { flex-direction: column; }
             .phase-selection { flex-direction: column; }
+
+            .shopping-table {
+                font-size: 0.85em;
+            }
+
+            .shopping-table th,
+            .shopping-table td {
+                padding: 10px 8px;
+            }
+
+            .shop-link {
+                padding: 6px 12px;
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
@@ -192,6 +288,7 @@
             <!-- Tabs -->
             <div class="tabs">
                 <button class="tab-button active" onclick="switchTab('materials')">📋 Materials List</button>
+                <button class="tab-button" onclick="switchTab('shopping')">🛒 Shopping List</button>
                 <button class="tab-button" onclick="switchTab('market')">💼 Market Analysis</button>
                 <button class="tab-button" onclick="switchTab('about')">ℹ️ About</button>
             </div>
@@ -259,6 +356,209 @@
                     <li><strong>Runtime:</strong> ~1 hour @ 53% throttle (4,800W)</li>
                     <li><strong>Vehicle Baseline:</strong> 38 lbs drag @ 65 MPH</li>
                 </ul>
+            </div>
+
+            <!-- Shopping List Tab -->
+            <div id="shopping-tab" class="tab-content">
+                <h2>🛒 Amazon Shopping List - EDF Electronics</h2>
+                <p style="margin-bottom: 30px; color: #666;">Direct purchase links for all required components. Click item names to view on Amazon.</p>
+
+                <!-- ESCs & Control -->
+                <h3 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 8px; margin-top: 20px;">⚡ ESCs & Control Systems</h3>
+                <table class="shopping-table">
+                    <thead>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Item</th>
+                            <th>Purpose</th>
+                            <th>Est. Price</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2</td>
+                            <td>Castle Phoenix Edge 120 ESC</td>
+                            <td>Motor speed controllers (120A each)</td>
+                            <td>$300-320</td>
+                            <td><a href="https://www.amazon.com/Creations-Brushless-Supports-Programmable-Helicopters/dp/B0GQ9PNTLD" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>PWM Controller</td>
+                            <td>Throttle control for ESCs</td>
+                            <td>$15-20</td>
+                            <td><a href="https://www.amazon.com/Regulator-Control-Brushless-Aeromodelling-Controller/dp/B0DFTHDZ92" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Servo Extension Cables (3ft)</td>
+                            <td>Connect controller to cabin</td>
+                            <td>$10-15</td>
+                            <td><a href="https://www.amazon.com/BackBayRC-Twisted-Extension-Vehicles-Bikes/dp/B0D38DDTQX" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Emergency Stop Button</td>
+                            <td>Safety cutoff (momentary, waterproof)</td>
+                            <td>$8-12</td>
+                            <td><a href="https://www.amazon.com/GUETNEU-Waterproof-Emergency-Momentary-Transparent/dp/B0CR19ZTBJ" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>ESCs & Control Subtotal</strong></td>
+                            <td><strong>$333-367</strong></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Wiring & Connectors -->
+                <h3 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 8px; margin-top: 30px;">🔌 Wiring & Connectors</h3>
+                <table class="shopping-table">
+                    <thead>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Item</th>
+                            <th>Purpose</th>
+                            <th>Est. Price</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>BNTECHGO 10 AWG Silicone Wire</td>
+                            <td>High-current power cables (25ft red/black)</td>
+                            <td>$40</td>
+                            <td><a href="https://www.amazon.com/BNTECHGO-Silicone-Flexible-Strands-Stranded/dp/B01ABOPO2S" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>XT90 Connectors (5 pairs)</td>
+                            <td>EDF to ESC connections</td>
+                            <td>$15</td>
+                            <td><a href="https://www.amazon.com/MADCATZ-Connectors-High-Temp-Gold-Plated-Battery/dp/B0F8VLN34V" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Anderson Powerpole 45A</td>
+                            <td>Battery power connections</td>
+                            <td>$20-25</td>
+                            <td><a href="https://www.amazon.com/Relaxweex-Connectors-Assortment-Disconnect-Terminals/dp/B0GHNRXHH1" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>4mm Bullet Connectors</td>
+                            <td>Motor to ESC connections</td>
+                            <td>$12</td>
+                            <td><a href="https://www.amazon.com/FLY-RC-Bullet-Connector-Battery/dp/B07CSQH2QC" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>100A Inline Fuse Holders</td>
+                            <td>Circuit protection (safety critical)</td>
+                            <td>$20</td>
+                            <td><a href="https://www.amazon.com/BOJACK-Plated-Inline-Automotive-Protection/dp/B0B7VW4Y9X" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Heat Shrink Tubing Kit (650pcs)</td>
+                            <td>Insulate and protect connections</td>
+                            <td>$15</td>
+                            <td><a href="https://www.amazon.com/650pcs-Shrink-Tubing-innhom-Approved/dp/B07WWWPR2X" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Wiring & Connectors Subtotal</strong></td>
+                            <td><strong>$122-127</strong></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Tools & Testing -->
+                <h3 style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 15px; border-radius: 8px; margin-top: 30px;">🔧 Tools & Testing Equipment</h3>
+                <table class="shopping-table">
+                    <thead>
+                        <tr>
+                            <th>Qty</th>
+                            <th>Item</th>
+                            <th>Purpose</th>
+                            <th>Est. Price</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Helping Hands Soldering Station</td>
+                            <td>Hold wires during assembly</td>
+                            <td>$12</td>
+                            <td><a href="https://www.amazon.com/Neiko-01902-Adjustable-Magnifying-Alligator/dp/B000P42O3C" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Zip Ties Assortment</td>
+                            <td>Cable management and securing</td>
+                            <td>$8</td>
+                            <td><a href="https://www.amazon.com/HAVE-ME-TD-Cable-Ties/dp/B08TVLYB3Q" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Digital Fish Scale (100lb)</td>
+                            <td>Measure actual EDF thrust output</td>
+                            <td>$15</td>
+                            <td><a href="https://www.amazon.com/Fishfun-Digital-Hanging-Fishing-Compound/dp/B072SVHZLC" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Infrared Thermometer</td>
+                            <td>Monitor ESC/motor temperatures</td>
+                            <td>$20</td>
+                            <td><a href="https://www.amazon.com/Etekcity-Thermometer-774-Temperature-Accessories/dp/B0B71HFH9K" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Kill-A-Watt Power Meter</td>
+                            <td>Measure actual power consumption</td>
+                            <td>$25</td>
+                            <td><a href="https://www.amazon.com/P3-International-P4460-Electricity-Monitor/dp/B000RGF29Q" target="_blank" class="shop-link">View on Amazon</a></td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"><strong>Tools & Testing Subtotal</strong></td>
+                            <td><strong>$80</strong></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <!-- Grand Total -->
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 10px; margin-top: 40px; text-align: center;">
+                    <h2 style="margin-bottom: 10px;">💰 Total Amazon Shopping List</h2>
+                    <div style="font-size: 3em; font-weight: bold; margin: 15px 0;">$535-574</div>
+                    <p style="font-size: 1.1em;">All components for dual EDF testing (excludes batteries & test bench materials)</p>
+                    <p style="margin-top: 15px; opacity: 0.9;">⚡ Castle Phoenix Edge 120 ESCs handle 94A per EDF safely<br>
+                    📦 All items Prime-eligible for 1-2 day delivery<br>
+                    ✅ Shopping list verified March 2026</p>
+                </div>
+
+                <!-- Additional Notes -->
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 10px; margin-top: 30px; border-left: 5px solid #667eea;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">📝 Important Notes</h3>
+                    <ul style="line-height: 2.5; padding-left: 20px;">
+                        <li><strong>ESCs:</strong> Buy quantity 2 - one for each EDF</li>
+                        <li><strong>Power Requirements:</strong> Each EDF draws 94A @ 48V (4,500W max)</li>
+                        <li><strong>Battery:</strong> Requires 5,000W+ inverter system (see DIY LiFePO4 build guide)</li>
+                        <li><strong>Test Bench:</strong> Additional $220 in lumber/hardware from Home Depot</li>
+                        <li><strong>Estimated Delivery:</strong> 1-2 days with Prime for most items</li>
+                        <li><strong>Safety:</strong> 100A fuses are critical - do not skip</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- About Tab -->
